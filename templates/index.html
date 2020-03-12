@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PyPaperServer </title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    
+
+    <h3 id='title'> Hello World! </h3 id='title'>
+    
+        <div class="container">
+            
+            <div class="container-img"><img id='img-view' class="img-view" /></div>
+
+            <div class="container-ui">
+                <!-- Ui Selector -->
+                <select id="choose-ui" class="select-ui">
+                    <option value="add"> Add </option>
+                    <option value="paper"> Render </option>
+                    <option value="layer"> layers </option>
+                </select>
+                
+                <!-- Render Paper Form -->
+                <form id="paper-form" action="/render" id='form' method="POST" enctype="multipart/form-data">
+                    <div class="devide-width">
+                        <div class="inp">
+                            <label for="width"> Width </label>
+                            <input type="text" name="width" id="width" value="210">
+                        </div>
+                        <div class="inp">
+                            <label for="spacing"> spacing </label>
+                            <input type="text" name="spacing" id="spacing" value="1">
+                        </div>
+                        <div class="inp">
+                            <label for="height"> Height </label>
+                            <input type="text" name="height" id="height" value="297">
+                        </div>
+                        
+                    </div>
+
+                    <div class="devide-width">
+                        <div class="inp">
+                            <label for="axis"> Axis </label>
+                            <select name="axis" id="axis">
+                                <option value="R"> Right </option>
+                                <option value="L"> Left </option>
+                            </select>
+                        </div>
+    
+                        <div class="inp">
+                            <label for="render-type"> Request Type </label>
+                            <select name="render-type" id="render-type">
+                                <option value="thum"> Thumbnail </option>
+                                <option value="prev"> Orginal </option>
+                                <option value="down"> Download </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <input class="btn" type="submit" id="submit-paper" value="Render Paper" />
+                </form>
+
+                <!-- Add or Send A Layer Form -->
+                <form id="layer-form" action="/add" id='form' method="POST" enctype="multipart/form-data">
+
+                    <div class="inp">
+                        <label for="img-file"> Select A Image </label>
+                        <input type="file" name="img" id="img-file">
+                    </div>
+
+                    <div class="devide-width">
+                        <div class="inp">
+                            <label for="width"> Width </label>
+                            <input type="text" name="width" id="width-l" value="27">
+                        </div>
+                        <div class="inp">
+                            <label for="noc"> Number Of Copy </label>
+                            <input type="text" name="noc" id="noc" value="3">
+                        </div>
+                        <div class="inp">
+                            <label for="height"> Height </label>
+                            <input type="text" name="height" id="height-l" value="0">
+                        </div>
+                        
+                    </div>
+                    <input class="btn" type="submit" id="submit-layer" value="Add Layer" />
+                </form>
+                
+                <!-- Edit Layer Copy and Resize Form -->
+                <div id="layer-edit">
+                    <form id="layer-edit-form" action="/change" id='form' method="POST" enctype="multipart/form-data">
+                
+                        <div>
+                            <label for="layers-name"> Select Layer </label>
+                            <select class="selecter" id="layers-name" name="layers-name"></select>
+                        </div>
+
+                        <div class="devide-width">   
+                            <div class="inp">
+                                <label for="noc-layer"> Number Of Copy </label>
+                                <input type="text" name="noc" id="noc-layer">
+                            </div>
+                        </div>
+
+                        <input class="btn" type="submit"  id="change-layer" value="Change">
+                        <input class="btn" type="button"  id="delete-layer" value="Delete">
+                    </form>
+    
+                    <!-- <div class="layer-info">
+                        <div> Width : <span id="layer-width">  </span> </div>
+                        <div> Height : <span id="layer-height">  </span> </div>
+                        <div> Number Of Copy : <span id="layer-noc">  </span> </div>
+                    </div> -->
+                </div>
+
+                <!-- Loding Ui -->
+                <div id="loading"> Loading... </div>
+                <div class="total-noc"> <div> Number of Total Copy :  <b id='total-noc'>0</b> </div>  </div>
+            </div>
+            
+        </div>
+
+<script src="/public/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: stretch; */
+
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) minmax(240px, 1fr);
+}
+
+.container-img{
+
+    border: 2px solid black;
+
+}
+
+
+.img-view {
+    width: 100%;
+}
+
+
+.container-ui {
+    margin: 10px;
+    color: red;
+
+}
+
+
+.select-ui {
+
+    font-weight: bold;
+    width: 100%;
+    color: darkgreen;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+
+.devide-width {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: stretch;
+    margin: 0px;
+}
+
+
+.inp {
+
+    margin: 10px;
+
+}
+
+.inp label{
+    color: blue;
+    font-size: 15px;
+}
+
+.inp input {
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    background-color: transparent;
+}
+
+.inp select {
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    background-color: transparent;
+}
+
+.btn {
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.suc {
+    color: black;
+    background-color: lightgreen;
+}
+
+.den {
+    color: black;
+    background-color: red;
+}
+
+.war {
+    color: black;
+    background-color: yellow;
+}
+
+
+/* For Debug Only */
+#paper-form{
+    display: none;
+}
+
+.selecter {
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    background-color: transparent;
+}
+
+.select-ui-any {
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.layer-info {
+    color: blue;
+    align-content: right;
+}
+
+.total-noc {
+    margin: 20px;
+}
