@@ -3,7 +3,7 @@
 ### Programmer :-
     jahid
     
-### Reqire Modules
+### Require Modules
     pip install pillow
 
 ### You Will Need A Lib Called Paper;
